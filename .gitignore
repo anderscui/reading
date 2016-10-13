@@ -61,4 +61,9 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
+# IntelliJ
+*.class
+programming/java/impatient/trying/.idea/*.*
+
+# Mac OS
 .DS_Store
