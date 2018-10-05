@@ -136,5 +136,13 @@ framework是指一个API集；runtime则表示OS。如果app需要特定于OS的
 
 进一步地，可通过`RumtimeIdentifiers`指定app所支持的OS。
 
+# 结论
 
+使用Rider、.NET Core和C#，编写console、web应用，和Python、Java等有什么区别吗？性能应比py略高，语法比java更简洁，但就我个人体验，差别不大，开发效率上py更高，语法的简洁则可以采用scala作为better java。然后就日常所写的代码，ML、NLP方面的库py和java的优势不可以道里计。
+
+事实上，想不到有哪一部分是必须要用dotnet的，或者至少dotnet有明显的优势。之前想到的点是EF这个库好用，但相比的也是js，而不是py和java。所以，最后，能用的地方只有jieba.NET的维护和改进了。一方面是维护它的issue，另一方面，尝试引入更多功能，作为练习之用。兼容.NET Core，可以有更多的受众，仅此而已了。
+
+Windows可以说已经完全不用，游戏开发也不接触，就安心做分词和搜索相关吧。jieba似乎已经停止了维护，但还有不少功能可以添加，ML.NET也在慢慢做起来，因此这里作为一个playground还不错吧。
+
+然后，F#的学习也是类似，找不到太合适的应用场景。
 
