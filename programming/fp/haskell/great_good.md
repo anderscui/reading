@@ -787,6 +787,62 @@ map是fmap的一个特例，只能用于列表类型。上面所说的`f`对应�
 
 # Ch08 IO
 
+关于IO的基础。IO不是FP中pure的那一部分，但编程的目标不是purity：）
+
+## Separating the Pure from the Impure
+
+Haskell的函数是纯粹的，一是相等的输入会有相等的结果；二是函数不允许有副作用。但完全的纯粹达不到，因为至少我们需要”看到“程序的结果是什么。Haskell将程序分隔为两部分，纯与不纯，前者仍可获得FP的种种好处，后者则负责脏活累活。
+
+```haskell
+-- hello.hs
+
+main :: IO ()
+main = putStrLn "Hello, world"
+```
+
+```bash
+ghc --make hello.hs
+./hello
+```
+
+`putStrLn`的类型是`String -> IO ()`，可以认为是，返回一个IO action，且其类型为`()`，即`unit`，该类型同于空的tuple。
+
+IO action执行的时间是，当给它一个`main`的名称时。使用`do`，可以组合多个IO actions。
+
+```haskell
+main = do
+    putStrLn "Hello, what's your name?"
+    name <- getLine
+    putStrLn ("Hey " ++ name ++ ", you rock!")
+```
+
+`<-` 结构从一个IO action中”提取“值。
+
+## Some Useful IO Functions
+
+* putStr
+* putChar
+* print
+* when
+* sequence
+* mapM, mapM_
+* forever
+* forM
+
+# Ch09 More IOs
+
+TODO
+
+# Ch10 Functionally Solving Problems
+
+## Reverse Polish Notation Calculator
+
+## Heathrow to London
+
+# Ch11 Applicative Functors
+
+函子可视为其元素可逐一map的容器，也可看作拥有上下文的值。
+
 
 
 
