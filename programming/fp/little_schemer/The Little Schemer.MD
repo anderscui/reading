@@ -20,7 +20,7 @@
 * 1确定思考起点，4保证递归可正常结束；
 * 2、3确定如何构造一个列表
 * 5说明类似于fold的过程
-* 6-10说明代码的设计过程
+* 6-10说明代码的设计过程。6：勿过早优化，写完一遍后，可能优化思路就出来了；
 
 # 五规则
 
@@ -35,7 +35,7 @@
 * atom: (and (not pair) (not null))，简单来说，就是非列表的数据（值）
 * pair: 由任意两个值（包括pair类型的值）结合而成的数据对，有`cons`函数实现；
 * list: 基于pair构成的链表结构；同时也是函数，生产list类型的数据；
-* S-expr: symbolic expression，表示嵌套list，它可以是atom或由两个S-expr构成的表达式；
+* S-expr: symbolic expression，它可以是一个atom或一个由S-expr构成的列表，该列表可能为空；可以看到，此定义是递归的，可参考树的递归定义；
 * quote: 一种form，生成常量值，该值即相应代码片段的字面值（即不是其词法信息，不解释）。`(quote (+ 1 2)`的值是`'(+ 1 2)`，而`(+ 1 2)`的值是`3`。
 * constant：常量，可以自明的值，如number、string或boolean等。
 
@@ -99,5 +99,22 @@ The primitive `eq?` takes two arguments. Each must be a **non-numeric atom**.
 
 `rember`: remove a (first one) member from a lat.
 
+# Numbers Games
 
+`zero?`类似于`null?`，`add1`类似于`cons`。
+
+# It's Full of Starts
+
+# 6. Shadows
+
+使用辅助函数对一种“表示”进行抽象，抽象如同原来事物的影子：像，但不是。
+
+# 7. Friends and Relations
+
+# 8. Lambda the Ultimate
+
+`(lambda (a l) ...)`定义了一个函数，它有两个参数。
+
+而`(define func
+		(lambda (a l) ...)`给了这个函数一个名字。
 
